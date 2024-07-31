@@ -1,4 +1,4 @@
-from math_operations import add, subtract, multiply
+from math_operations import add, subtract, multiply, mean
 import pytest
 
 
@@ -21,3 +21,10 @@ def test_subtract(a, b, expected):
 )
 def test_multiply(a, b, expected):
     assert multiply(a, b) == expected
+
+
+@pytest.mark.parametrize(
+    "numbers, expected", [([10, 20, 30], 20), ([1.5, 2.5, 3.5], 2.5)]
+)
+def test_mean(numbers, expected):
+    assert mean(numbers) == expected
